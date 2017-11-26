@@ -2,7 +2,7 @@
 
 A spectogram player for [Fragment](https://www.fsynth.com)
 
-This gather any images element with CSS class "hplayer" and build a player out of it, the covnerted sound can be downloaded as WAV.
+This gather any images element with CSS class "hplayer" and build a player out of it, the converted sound can be downloaded as WAV.
 
 The player use additive synthesis with a [logarithmic map](https://www.fsynth.com/documentation/ui/) to convert the image to sounds, granular synthesis method is planned.
 
