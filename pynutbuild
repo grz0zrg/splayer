@@ -1,0 +1,2 @@
+#!/bin/sh
+python pynut.py js/app_splayer.js css/app_splayer.css js/worker

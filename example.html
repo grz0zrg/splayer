@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+        <title>Fragment Synthesizer SPlayer library example</title>
+        
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+
+                margin: 0 auto;
+            }
+
+            body {
+                font-family: "FiraSans-Regular", Helvetica, Arial, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+
+                overflow: hidden;
+            }
+            
+            .container {
+                width: 90%;
+                height: 90%;
+                
+                padding: 0;
+                margin: auto;
+                list-style: none;
+  
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                
+                align-items: center;
+  
+                flex-flow: row wrap;
+                -webkit-flex-flow: row wrap;
+                justify-content: center;
+                
+                overflow: auto;
+                
+                height: 100%;
+            }
+            
+            .container > div {
+                margin: 4px;
+                
+                box-shadow: 2px 2px 4px #111111;
+                
+                background-color: #000000;
+            }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="dist/splayer.min.css"/>
+
+        <script type="text/javascript" src="dist/splayer.js" defer></script>
+    </head>
+
+    <body>
+        <div style="text-align: center; margin-left: 4px; margin-top: 2px">
+            Fragment Synthesizer SPlayer library example
+        </div>
+        <div class="container">
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/vans1.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fr_voice.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/metasynth.jpg"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs1.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs2.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs3.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs4.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs5.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs6.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs7.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs8.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs12.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs11.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/vans1.png"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/metasynth.jpg"/>
+            <img class="hplayer" data-sps="60" data-width="400" data-height="200" data-octaves="10" data-base-frequency="16.34" src="data/fs90.png"/>
+        </div>
+    </body>
+</html>

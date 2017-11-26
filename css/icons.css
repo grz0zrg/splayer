@@ -1,0 +1,35 @@
+.sp-play-icon {
+    background-image: url("../data/player/icons/media-play-3x.png");
+}
+
+.sp-playb-icon {
+    background-image: url("../data/player/icons/media-playb-3x.png");
+}
+
+.sp-pause-icon {
+    background-image: url("../data/player/icons/media-pause-3x.png");
+}
+
+.sp-zoom-icon {
+    background-image: url("../data/player/icons/media-zoom-3x.png");
+}
+
+.sp-stop-icon {
+    background-image: url("../data/player/icons/media-stop-3x.png");
+}
+
+.sp-loop-icon {
+    background-image: url("../data/player/icons/media-loop-3x.png");
+}
+
+.sp-download-icon {
+    background-image: url("../data/player/icons/data-transfer-download-3x.png");
+}
+
+.sp-image-icon {
+    background-image: url("../data/player/icons/image-3x.png");
+}
+
+.sp-magnify-icon {
+    background-image: url("../data/player/icons/magnifying-glass-3x.png");
+}

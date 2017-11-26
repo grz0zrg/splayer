@@ -1,0 +1,2 @@
+#!/bin/sh
+anbexec nut -appfile:"js/splayer.js" -appfile:"css/splayer.css" -appdir:"js/worker"
