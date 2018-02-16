@@ -26,6 +26,8 @@ var SPlayer = new (function() {
         
         _selected_player = null,
         
+        _seek_timeout = null,
+        
         _known_options = {
             width: 400,
             height: 200,
@@ -266,7 +268,7 @@ var SPlayer = new (function() {
         }
     };
     
-    var _stop = function (player, no_update, untrigger_end_event) {
+    var _stop = function (player, no_update, end_event) {
         player.audio_paused_at = 0;
         
         if (!no_update) {
@@ -278,15 +280,13 @@ var SPlayer = new (function() {
             return;
         }
         
-        _audioStop(player.audio_buffer_source, player.audio_gain_node, untrigger_end_event);
+        _audioStop(player.audio_buffer_source, player.audio_gain_node, end_event);
         
         player.stopped = true;
     };
     
-    var _setPlayPosition = function (player, percent) {
-        if (player.audio_buffer) {
-            _stop(player, true, true);
-            
+    var _seek = function (player, percent) {
+        return function () {
             _updateAudioBuffer(player);
             
             player.paused = true;
@@ -294,6 +294,16 @@ var SPlayer = new (function() {
             _play(player, player.audio_buffer.duration * percent);
             
             _updateOsd(player);
+            
+            player.seeking = false;
+        };
+    };
+    
+    var _setPlayPosition = function (player, percent) {
+        if (player.audio_buffer) {
+            player.seeking = true;
+
+            _stop(player, true, _seek(player, percent));
         }
     };
     
@@ -570,7 +580,7 @@ var SPlayer = new (function() {
             WUI_ToolBar.toggle(player.toolbar, 0, true);
             
             x = ev.clientX - box.left
-
+            
             _setPlayPosition(_selected_player, x / _selected_player.options.width);
         };
     };
@@ -818,9 +828,10 @@ var SPlayer = new (function() {
             canvas: canvas,
             canvas_ctx: ctx,
             image: image,
-            options: options,
-            paused: true,
-            stopped: true,
+            options: options, // options object (see _known_options)
+            paused: true, // is paused
+            stopped: true, // is stopped
+            seeking: false, // is seeking
             
             audio_buffer: null,
             audio_buffer_source: _audioCreateBufferSource(gain_node),

@@ -100,11 +100,11 @@ var _getExpEndTime = function (start, target, t_start) {
     return t_start + time;
 };
 
-var _audioStop = function (audio_buffer_node, audio_gain_node, untrigger_onended) {
+var _audioStop = function (audio_buffer_node, audio_gain_node, onended) {
     var stop_time;
     
-    if (untrigger_onended) {
-        audio_buffer_node.onended = null;
+    if (onended !== undefined) {
+        audio_buffer_node.onended = onended;
     }
     
     if (audio_buffer_node.buffer) {
@@ -203,7 +203,7 @@ var _audioInit = function () {
     _audio_gain_node = _audioCreateGainNode(_audio_ctx, 1.0, _audio_ctx.destination);
     
     _audio_convolver_node = _audioCreateConvolver(_audio_ctx, _audio_gain_node, {
-            seconds: 0.08,
+            seconds: 0.1,
             decay: 1.0,
             reverse: false
         });
